@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">LoginSignup</string>
+    <string name="electrobill">ElectroBill</string>
 </resources>
