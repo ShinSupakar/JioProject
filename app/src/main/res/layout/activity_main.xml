@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/toolbar_main"
         android:layout_width="match_parent"
-        android:fontFamily="@font/volkhov"
+        android:fontFamily="@font/volkhov_bold"
         android:text="My Blocks"
         android:textSize="30dp"
         android:textStyle="bold"

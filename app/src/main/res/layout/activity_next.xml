@@ -15,7 +15,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:textStyle="bold"
-        android:fontFamily="@font/volkhov"
+        android:fontFamily="@font/volkhov_bold"
         android:textSize="24sp" />
 
     <com.google.android.material.tabs.TabLayout
