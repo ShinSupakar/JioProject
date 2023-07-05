@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_next.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".NextActivity">
+
+    <TextView
+        android:id="@+id/blockNumberTextView"
+        android:layout_width="118dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:textStyle="bold"
+        android:fontFamily="@font/volkhov"
+        android:textSize="24sp" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:tooltipText="start"
+        android:background="@color/yellow"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--  <com.google.android.material.tabs.TabItem
+               android:text="Tab1"
+               android:id="@+id/tab1"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"/>
+           <com.google.android.material.tabs.TabItem
+               android:text="Tab2"
+               android:id="@+id/tab2"
+               android:layout_height="wrap_content"
+               android:layout_width="wrap_content"/> -->
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</LinearLayout>
