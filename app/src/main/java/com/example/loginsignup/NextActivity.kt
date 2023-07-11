@@ -1,6 +1,8 @@
 package com.example.loginsignup
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.loginsignup.databinding.ActivityNextBinding
@@ -13,6 +15,7 @@ class NextActivity : AppCompatActivity() {
     private lateinit var viewPager2: ViewPager2
     private lateinit var adapter: PageAdapter
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -51,5 +54,9 @@ class NextActivity : AppCompatActivity() {
 
         val blockNumber = intent.getIntExtra("blockNumber", 0)
         binding.blockNumberTextView.text = "Block $blockNumber"
+
+
+
+
     }
 }

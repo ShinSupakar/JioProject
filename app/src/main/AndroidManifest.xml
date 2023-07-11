@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/electrobill"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LoginSignup"
@@ -32,10 +32,10 @@
             android:exported="true" />
         <activity
             android:name=".FirstFragment"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".SecondFragment"
-            android:exported="true"></activity>
+            android:exported="true" />
 
     </application>
 

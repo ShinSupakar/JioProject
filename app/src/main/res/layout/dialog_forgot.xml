@@ -12,7 +12,7 @@
         android:id="@+id/dialogBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/dark_purple1"
+        android:background="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="20dp">
 
@@ -38,10 +38,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:text="Enter your email address"
-            android:textColor="@color/white"
-            android:layout_marginTop="8dp"
+            android:textColor="@color/navy_blue"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@id/forgotTitle" />
 
@@ -73,29 +73,26 @@
             android:textSize="14sp"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="@id/dialogBox"
+            app:layout_constraintEnd_toStartOf="@id/btnReset"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editBox"
-            app:layout_constraintEnd_toStartOf="@id/btnReset"/>
+            app:layout_constraintTop_toBottomOf="@id/editBox" />
 
         <Button
 
+            android:id="@+id/btnReset"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:id="@+id/btnReset"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="40dp"
+            android:layout_marginBottom="8dp"
+            android:text="Reset"
             android:textColor="@color/white"
             android:textSize="14sp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="10dp"
-            android:text="Reset"
-            app:cornerRadius = "20dp"
+            app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="@+id/dialogBox"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/btnCancel"/>
-
-
-
+            app:layout_constraintStart_toEndOf="@id/btnCancel" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

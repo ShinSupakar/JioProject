@@ -9,6 +9,8 @@ import com.example.loginsignup.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+//    private lateinit var blockBillList:ArrayList<BlockBill>
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +22,7 @@ class MainActivity : AppCompatActivity() {
                 "                                               >", "BLOCK 4 " +
                 "                                               >", "BLOCK 5 " +
                 "                                               >")
+
         val adapter = BlockAdapter(blockList) { position ->
             val intent = Intent(this, NextActivity::class.java)
             intent.putExtra("blockNumber", position + 1)
@@ -27,5 +30,14 @@ class MainActivity : AppCompatActivity() {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
+//        blockBillList = ArrayList()
+//        blockBillList.add(BlockBill(R.drawable.check1))
+
     }
+
+//    class BlockBillViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+//        val imageView: ImageView = itemView.findViewById(R.id.imageBill)
+//
+//
+//    }
 }
