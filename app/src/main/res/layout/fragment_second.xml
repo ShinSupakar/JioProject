@@ -5,14 +5,40 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:textSize="30sp"
-        android:gravity="center"
-        android:background="@color/navy_blue"
-        android:textColor="@color/white"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Second" />
+        android:layout_height="match_parent">
+
+<!--        <EditText-->
+<!--            android:id="@+id/etFloorRooms"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_marginLeft="100dp"-->
+<!--            android:layout_marginTop="100dp"-->
+<!--            android:hint="Block-Floor-Room Number" />-->
+        <!--            android:inputType="number" />-->
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="180dp"
+            android:onClick="GadgetInfoActivity"
+            android:text="Show Gadget Information" />
+
+    </RelativeLayout>
+
+
+    <!-- TODO: Update blank fragment layout -->
+<!--    <TextView-->
+<!--        android:textSize="30sp"-->
+<!--        android:gravity="center"-->
+<!--        android:background="@color/navy_blue"-->
+<!--        android:textColor="@color/white"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="Second" />-->
 
 </FrameLayout>

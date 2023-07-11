@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoginSignup</string>
+    <string name="app_name">ElectroInfo</string>
     <string name="electrobill">ElectroBill</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
