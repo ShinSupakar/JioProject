@@ -11,17 +11,18 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.loginsignup.databinding.ActivityLogin2Binding
 import com.google.firebase.auth.FirebaseAuth
-import java.util.regex.Pattern
+
 
 class LoginActivity2 : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityLogin2Binding
     private lateinit var firebaseAuth: FirebaseAuth
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLogin2Binding.inflate(layoutInflater)
         setContentView(binding.root)
+
         firebaseAuth = FirebaseAuth.getInstance()
         binding.btnLogin.setOnClickListener {
             val email = binding.etLoginEmail.text.toString()
@@ -32,6 +33,8 @@ class LoginActivity2 : AppCompatActivity() {
                     if(it.isSuccessful){
                         val intent = Intent(this,MainActivity::class.java)
                         startActivity(intent)
+                        finish()
+
                     }
                     else{
                         Toast.makeText(this,it.exception.toString(),Toast.LENGTH_SHORT).show()
@@ -42,6 +45,7 @@ class LoginActivity2 : AppCompatActivity() {
                 Toast.makeText(this,"Fields cannot be empty",Toast.LENGTH_SHORT).show()
             }
         }
+
         binding.forgotPassword.setOnClickListener{
             val builder = AlertDialog.Builder(this)
             val view = layoutInflater.inflate(R.layout.dialog_forgot,null)
@@ -61,9 +65,7 @@ class LoginActivity2 : AppCompatActivity() {
             }
             dialog.show()
         }
-
     }
-    //outside on create
 
     private fun compareEmail(email:EditText){
         if (email.text.toString().isEmpty()){

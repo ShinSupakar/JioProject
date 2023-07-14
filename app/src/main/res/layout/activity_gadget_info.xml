@@ -32,16 +32,6 @@
         tools:ignore="SpeakableTextPresentCheck">
 
 
-        <!--  <com.google.android.material.tabs.TabItem
-               android:text="Tab1"
-               android:id="@+id/tab1"
-               android:layout_height="wrap_content"
-               android:layout_width="wrap_content"/>
-           <com.google.android.material.tabs.TabItem
-               android:text="Tab2"
-               android:id="@+id/tab2"
-               android:layout_height="wrap_content"
-               android:layout_width="wrap_content"/> -->
     </com.google.android.material.tabs.TabLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -55,6 +45,7 @@
             android:fontFamily="@font/volkhov_bold"
             android:text="Please Enter: "
             android:textColor="@color/navy_blue" />
+
         <EditText
             android:id="@+id/etFloorRooms"
             android:layout_width="wrap_content"
@@ -62,7 +53,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Block-Floor-Room Number" />
+            android:hint="Block-Floor-Room Number"
+            android:minHeight="48dp" />
     </LinearLayout>
 
 
@@ -200,38 +192,6 @@
             android:layout_marginLeft="10dp"
             android:textSize="18sp" />
     </LinearLayout>
-<!--    <TextView-->
-<!--        android:id="@+id/name2"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="18dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_marginTop="60dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:text="Name: "-->
-<!--        android:layout_width="wrap_content" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/id2"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="18dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:text="Id:"-->
-<!--        android:layout_width="wrap_content" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/gadgets2"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textSize="18dp"-->
-<!--        android:textStyle="bold"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="20dp"-->
-<!--        android:text="Gadgets:"-->
-<!--        android:layout_width="wrap_content" />-->
-
-    <!--    <androidx.viewpager2.widget.ViewPager2-->
-<!--        android:id="@+id/viewPager"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent" />-->
 
     <Button
         android:id="@+id/showButton"

@@ -2,26 +2,54 @@ package com.example.loginsignup
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat.startActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.loginsignup.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.core.Context
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
+
+    private lateinit var navigationView: NavigationView
+
+    lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private lateinit var binding: ActivityMainBinding
-//    private lateinit var blockBillList:ArrayList<BlockBill>
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val blockList = listOf("BLOCK 1" +
-                "                                                >", "BLOCK 2 " +
-                "                                               >", "BLOCK 3 " +
-                "                                               >", "BLOCK 4 " +
-                "                                               >", "BLOCK 5 " +
-                "                                               >")
+
+
+        //neww
+        navigationView = findViewById(R.id.navView)
+        val logoutMenuItem = navigationView.menu.findItem(R.id.nav_logout)
+        logoutMenuItem.setOnMenuItemClickListener {
+            val intent = Intent(this,LoginActivity2::class.java)
+            startActivity(intent)
+            true
+        }
+        setUpViews()
+
+
+
+        val blockList = listOf(
+            "BLOCK 1" +
+                    "                                                >", "BLOCK 2 " +
+                    "                                               >", "BLOCK 3 " +
+                    "                                               >", "BLOCK 4 " +
+                    "                                               >", "BLOCK 5 " +
+                    "                                               >"
+        )
 
         val adapter = BlockAdapter(blockList) { position ->
             val intent = Intent(this, NextActivity::class.java)
@@ -30,14 +58,61 @@ class MainActivity : AppCompatActivity() {
         }
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = adapter
-//        blockBillList = ArrayList()
-//        blockBillList.add(BlockBill(R.drawable.check1))
-
+//        val navView = findViewById<NavigationView>(R.id.navView)
+//        navView.setNavigationItemSelectedListener{
+//            when(it.itemId){
+//
+//
+//            }
+//        }
     }
+
+
+    //new
+//    private fun logout(){
+//
+//        session.endLoginSession()
+//    }
+
+    fun setUpViews() {
+        setUpDrawerLayout()
+    }
+
+    fun setUpDrawerLayout() {
+        val mainDrawer = findViewById<DrawerLayout>(R.id.mainDrawer)
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+        actionBarDrawerToggle =
+            ActionBarDrawerToggle(this, mainDrawer, R.string.open_nav, R.string.close_nav)
+        actionBarDrawerToggle.syncState()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.nav_settings -> supportFragmentManager.beginTransaction()
+//                .replace()
+//        }
+//
+//    }
+}
+
 
 //    class BlockBillViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 //        val imageView: ImageView = itemView.findViewById(R.id.imageBill)
 //
 //
 //    }
-}
+//    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//        when(item.itemId){
+//            R.id.nav_home
+//        }
+
+
+

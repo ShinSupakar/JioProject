@@ -5,8 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 
         <item name="colorSecondary">@color/yellow_1</item>
-
-
+        <item name="colorPrimary">@color/navy_blue</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
 
 
     </style>

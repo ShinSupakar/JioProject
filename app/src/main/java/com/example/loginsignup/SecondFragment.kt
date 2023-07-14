@@ -13,9 +13,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class SecondFragment : Fragment() {
-
+//
 //    val nextButton = view.findViewById<Button>(R.id.nextButton)
-
+//
 //    private fun GadgetInfoActivity() {
 //        val intent = Intent(requireContext(), GadgetInfoActivity::class.java)
 //        startActivity(intent)
@@ -27,23 +27,14 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View?
     {
-
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_second, container, false)
 
-
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-//        val showButton = findViewById<Button>(R.id.showButton)
-
-//        showButton.setOnClickListener {
-////            val roomNumberEditText = findViewById<EditText>(R.id.etFloorRooms)
-////            val roomNumber = roomNumberEditText.text.toString()
-////            retrieveData(roomNumber)
-//        }
         super.onViewCreated(view, savedInstanceState)
         val nextButton = view.findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {
@@ -52,9 +43,6 @@ class SecondFragment : Fragment() {
         }
 
     }
-//    private fun GadgetInfoActivity() {
-//        val intent = Intent(requireContext(), GadgetInfoActivity::class.java)
-//        startActivity(intent)
-//    }
+
 
 }
