@@ -2,19 +2,16 @@ package com.example.loginsignup
 
 
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.TextUtils.replace
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat.startActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.loginsignup.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.core.Context
 
 class MainActivity : AppCompatActivity(){
 
@@ -51,13 +48,51 @@ class MainActivity : AppCompatActivity(){
                     "                                               >"
         )
 
-        val adapter = BlockAdapter(blockList) { position ->
-            val intent = Intent(this, NextActivity::class.java)
-            intent.putExtra("blockNumber", position + 1)
-            startActivity(intent)
-        }
+        //       val adapter1 = BlockAdapter(blockList) { position ->
+        //         val intent = Intent(this, NextActivity::class.java)
+        //           intent.putExtra("blockNumber", position + 1)
+        //           startActivity(intent)
+        //       }
+
+        val adapter1 = BlockAdapter(blockList,
+            onItemClick = { position ->
+                val intent = Intent(this, NextActivity::class.java)
+                intent.putExtra("blockNumber", position)
+                startActivity(intent)
+            },
+            listener = { position ->
+                // Handle the listener function here if needed
+            }
+        )
+
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter
+        binding.recyclerView.adapter = adapter1
+
+        //       val adapter2 = BlockAdapter(blockList) { position ->
+        //          val firstFragment = FirstFragment()
+//            val bundle = Bundle()
+//            bundle.putInt("blockNumber", position + 1)
+//            firstFragment.arguments = bundle
+
+//        }
+
+        val adapter2 = BlockAdapter(blockList,
+            onItemClick = { position ->
+                val firstFragment = FirstFragment()
+                val bundle = Bundle()
+                bundle.putInt("blockNumber", position)
+                firstFragment.arguments = bundle
+                // Handle the click event for FirstFragment if needed
+            },
+            listener = { position ->
+                // Handle the listener function here if needed
+            }
+        )
+
+
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = adapter2
 //        val navView = findViewById<NavigationView>(R.id.navView)
 //        navView.setNavigationItemSelectedListener{
 //            when(it.itemId){
@@ -113,6 +148,12 @@ class MainActivity : AppCompatActivity(){
 //        when(item.itemId){
 //            R.id.nav_home
 //        }
+
+
+
+
+
+
 
 
 

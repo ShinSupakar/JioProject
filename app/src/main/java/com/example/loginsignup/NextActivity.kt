@@ -26,7 +26,7 @@ class NextActivity : AppCompatActivity() {
         viewPager2 = findViewById(R.id.viewPager)
 
         adapter = PageAdapter(this)
-        tabLayout.addTab(tabLayout.newTab().setText("Block Bill"))
+        tabLayout.addTab(tabLayout.newTab().setText("Block Info"))
         tabLayout.addTab(tabLayout.newTab().setText("Gadget Info"))
         viewPager2.adapter = adapter
         tabLayout.addOnTabSelectedListener(object: TabLayout.OnTabSelectedListener{

@@ -9,10 +9,13 @@ import com.example.loginsignup.databinding.ItemBlockBinding
 
 class BlockAdapter(
     private val blockList: List<String>,
-    private val onItemClick: (position: Int) -> Unit
+    private val onItemClick: (position: Int) -> Unit,
+    private val listener: (Int) -> Unit
 //    private val dataSet: List<String>,
 //    private val onBlockClickListener: (BlockData) -> Unit
 ) : RecyclerView.Adapter<BlockAdapter.BlockViewHolder>() {
+
+//    private val blockIds: List<String> = blockList.map { it.replace("BLOCK ", "").trim() }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BlockViewHolder {
@@ -35,9 +38,11 @@ class BlockAdapter(
 //    }
 
     override fun onBindViewHolder(holder: BlockViewHolder, position: Int) {
+//        val blockId = blockIds[position]
         val block = blockList[position]
 
         holder.bind(block)
+//        holder.bind(blockId)
 
         holder.itemView.setOnClickListener {
             onItemClick(position)
@@ -46,6 +51,7 @@ class BlockAdapter(
                 blockList[1] -> imageView.setImageResource(R.drawable.check1)
 
             }
+            listener(position + 1)
         }
     }
 
@@ -66,13 +72,22 @@ class BlockAdapter(
 
     override fun getItemCount(): Int = blockList.size
 
-    class BlockViewHolder(private val binding: ItemBlockBinding) :
+    inner class BlockViewHolder(private val binding: ItemBlockBinding) :
         ViewHolder(binding.root) {
 
         fun bind(block: String) {
             binding.blockTextView.text = block
+
+            itemView.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    listener(position + 1)
+                }
+
+            }
         }
     }
 
 
 }
+
