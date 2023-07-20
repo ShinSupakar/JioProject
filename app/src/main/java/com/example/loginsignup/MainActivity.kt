@@ -54,19 +54,19 @@ class MainActivity : AppCompatActivity(){
         //           startActivity(intent)
         //       }
 
-        val adapter1 = BlockAdapter(blockList,
-            onItemClick = { position ->
-                val intent = Intent(this, NextActivity::class.java)
-                intent.putExtra("blockNumber", position)
-                startActivity(intent)
-            },
-            listener = { position ->
-                // Handle the listener function here if needed
-            }
-        )
+//        val adapter1 = BlockAdapter(blockList,
+//            onItemClick = { position ->
+////                val intent = Intent(this, NextActivity::class.java)
+////                intent.putExtra("blockNumber", position)
+////                startActivity(intent)
+//            },
+//            listener = { position ->
+//                // Handle the listener function here if needed
+//            }
+//        )
 
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
-        binding.recyclerView.adapter = adapter1
+//        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+//        binding.recyclerView.adapter = adapter2
 
         //       val adapter2 = BlockAdapter(blockList) { position ->
         //          val firstFragment = FirstFragment()
@@ -78,6 +78,9 @@ class MainActivity : AppCompatActivity(){
 
         val adapter2 = BlockAdapter(blockList,
             onItemClick = { position ->
+                val intent = Intent(this, NextActivity::class.java)
+                intent.putExtra("blockNumber", position)
+                startActivity(intent)
                 val firstFragment = FirstFragment()
                 val bundle = Bundle()
                 bundle.putInt("blockNumber", position)

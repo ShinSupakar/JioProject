@@ -46,11 +46,11 @@ class BlockAdapter(
 
         holder.itemView.setOnClickListener {
             onItemClick(position)
-            val imageView = holder.itemView.findViewById<ImageView>(R.id.imageView4)
-            when (block) {
-                blockList[1] -> imageView.setImageResource(R.drawable.check1)
-
-            }
+//            val imageView = holder.itemView.findViewById<ImageView>(R.id.imageView4)
+//            when (block) {
+//                blockList[1] -> imageView.setImageResource(R.drawable.check1)
+//
+//            }
             listener(position + 1)
         }
     }
