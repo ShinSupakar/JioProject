@@ -52,7 +52,7 @@ class NextActivity : AppCompatActivity() {
             }
         })
 
-        val blockNumber = intent.getIntExtra("blockNumber", 0)
+        val blockNumber = intent.getIntExtra("blockNumber",0)
         binding.blockNumberTextView.text = "Block $blockNumber"
 
 

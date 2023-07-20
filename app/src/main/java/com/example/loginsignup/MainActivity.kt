@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity(){
         val adapter2 = BlockAdapter(blockList,
             onItemClick = { position ->
                 val intent = Intent(this, NextActivity::class.java)
-                intent.putExtra("blockNumber", position)
+                intent.putExtra("blockNumber", position+1)
                 startActivity(intent)
                 val firstFragment = FirstFragment()
                 val bundle = Bundle()
