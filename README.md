@@ -96,7 +96,7 @@ Room-Level Gadget Details
 - Authentication: Firebase Auth
 
 - UI Components:
--   RecyclerView
--   ViewPager2
--   TabLayout
--   Navigation Drawer
+      - RecyclerView
+      - ViewPager2
+      - TabLayout
+      - Navigation Drawer
