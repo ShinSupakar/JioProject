@@ -9,13 +9,13 @@ The application integrates Firebase authentication and real-time data with a fra
 ## 🚀 Application Flow
 
 Splash Screen
-↓<br>
+ ↓<br>
 User Authentication
-↓<br>
+ ↓<br>
 Block Selection Dashboard
-↓<br>
+ ↓<br>
 Tabbed Block & Gadget Information
-↓<br>
+ ↓<br>
 Room-Level Gadget Details
 
 ## ⚙️ Features
