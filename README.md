@@ -9,13 +9,13 @@ The application integrates Firebase authentication and real-time data with a fra
 ## 🚀 Application Flow
 
 Splash Screen
-      ↓
+      ↓<br>
 User Authentication
-      ↓
+      ↓<br>
 Block Selection Dashboard
-      ↓
+      ↓<br>
 Tabbed Block & Gadget Information
-      ↓
+      ↓<br>
 Room-Level Gadget Details
 
 ## ⚙️ Features
@@ -96,7 +96,8 @@ Room-Level Gadget Details
 - Authentication: Firebase Auth
 
 - UI Components:
-      - RecyclerView
-      - ViewPager2
-      - TabLayout
-      - Navigation Drawer
+  - RecyclerView
+  - ViewPager2
+  - TabLayout
+  - Navigation Drawer
+
